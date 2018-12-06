@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Lifecycle Hooks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Hello World</h1>
+      <div>Count: {{ count }}</div>
+      <button @click="increment">Increment</button>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          count: 0
+        },
+        methods: {
+          alertTime(hookTitle) {
+            alert(`${hookTitle}: The time is ${Date.now().toLocaleString()}`);
+          },
+          increment() {
+            this.count++;
+          }
+        },
+        created() {
+          this.alertTime('created');
+        },
+        mounted() {
+          this.alertTime('mounted');
+        },
+        updated() {
+          this.alertTime('updated: count:' + this.count);
+        }
+      });
+    </script>
+  </body>
+</html>

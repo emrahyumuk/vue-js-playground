@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>v-if</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div v-bind:title="randNum" v-if="shown">
+        <h1>Hover over me for your random number</h1>
+      </div>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          randNum: Math.floor(Math.random() * 50) + 1,
+          shown: true
+        }
+      });
+    </script>
+  </body>
+</html>
