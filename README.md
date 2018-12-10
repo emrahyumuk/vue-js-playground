@@ -1,2 +1,2 @@
-# vue-projects
-Vue js Learning Projects
+# Vue js Playground - Sample Projects
+
